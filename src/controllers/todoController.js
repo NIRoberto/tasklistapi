@@ -2,20 +2,13 @@ import todo from "../model/todoModel";
 
 export const createTodo = async (req, res) => {
   try {
-    if (req.headers.authorization) {
-      const Todo = await todo.create(req.body);
-      res.status(201).json({
-        status: "success",
-        data: {
-          Todo,
-        },
-      });
-    } else {
-      return res.status(401).json({
-        status: "failed",
-        message: "Unauthorized",
-      });
-    }
+    const Todo = await todo.create(req.body);
+    res.status(201).json({
+      status: "success",
+      data: {
+        Todo,
+      },
+    });
   } catch (error) {
     res.status(400).json({
       status: "failed",
