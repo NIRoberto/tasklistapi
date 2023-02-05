@@ -7,10 +7,10 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "npm i && npm run build && node ./build/src/index.js",
-    "start:dev": "nodemon --exec babel-node ./src/index.js",
+    "start": "npm i && npm run build && node ./build/api/index.js",
+    "start:dev": "nodemon --exec babel-node ./api/index.js",
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel -d ./build/src/ ./src/ -s",
+    "build-babel": "babel -d ./build/api/ ./api/ -s",
     "build": "npm run clean && npm i && npm run build-babel"
   },
   "keywords": [],
